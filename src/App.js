@@ -55,7 +55,7 @@ class App extends Component {
     return (
       <div>
     <div>
-      <h1>Please select the languages you want</h1>
+      <h1>Please select the language you want</h1>
       <div className="btns">
       <li>
       <button className="to" onClick={() => this.handleTo()}>English</button>
