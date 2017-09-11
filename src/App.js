@@ -1,5 +1,5 @@
 //this will check to see if you have spelled "gato" correctly or not. It checks 1 word out of 40 :(
-//But I think I was on the right track...
+//I think I was on the right track...but idk how to target all ens or sps or frs or des 
 import React, { Component } from 'react';
 import './App.css';
 
