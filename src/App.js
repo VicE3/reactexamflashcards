@@ -1,3 +1,5 @@
+//this will check to see if you have spelled "gato" correctly or not. It checks 1 word out of 40 :(
+//But I think I was on the right track...
 import React, { Component } from 'react';
 import './App.css';
 
@@ -33,19 +35,19 @@ class App extends Component {
   }
 
   handleSubmit() {
-    if(this.state.input == this.state.words[0].sp) {
+    if(this.state.input === this.state.words[0].sp) {
       alert("ya did it!")
     } else if(this.state.input !== this.state.words[0].sp) {
-      alert("boo wrong answer")
+      alert("boo wrong answer" + ' => ' + this.state.words[0].sp)
     }
   }
 
   render() {
 
-    let span = this.state.words.map(function(langs, lang) {
+    let en = this.state.words.map(function(langs, lang) {
       return(
         <ul key={lang}>
-          <li>{langs.sp}</li>
+          <li>{langs.en}</li>
         </ul>
       )
     })
@@ -54,7 +56,7 @@ class App extends Component {
       <div>
     <div>
       <h1>Please select the languages you want</h1>
-      <div>
+      <div className="btns">
       <li>
       <button className="to" onClick={() => this.handleTo()}>English</button>
       <button className="to" onClick={() => this.handleTo()}>Dutch</button>
@@ -64,11 +66,11 @@ class App extends Component {
       </div>
     </div>
     <div id="theFlashcard">
-      <ul>{span}</ul>
+      <ul>{en}</ul>
     </div>
-      <input type="text" onChange={this.handleChange} value={this.state.input}/>
-      <button onClick={this.handleSubmit}>Submit</button>
-      <button>Reset</button>
+      <input className="bottom" type="text" onChange={this.handleChange} value={this.state.input}/>
+      <button className="bottom" onClick={this.handleSubmit}>Submit</button>
+      <button className="bottom">Reset</button>
   </div>
     );
   }
